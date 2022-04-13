@@ -11,6 +11,13 @@ import javax.ws.rs.core.Response;
 @Path("auction")
 public class AuctionRessource {
 
+  @GET
+  @Path("/running")
+  public Response isRunning(){
+    return Response.ok(ChatSocket.auction!=null).build();
+  }
+
+
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     public Response addAuction(Auction a){

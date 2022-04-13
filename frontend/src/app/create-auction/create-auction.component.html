@@ -1,0 +1,15 @@
+<form [formGroup]="formgroup">
+  <input type="text" name="name" placeholder="Puppe" formControlName="name">
+  <mat-error *ngIf="formgroup.controls['name'].invalid">
+    <p>Invalid!</p>
+  </mat-error>
+  <input type="text" name="desc" placeholder="Hat weiße Haare." formControlName="desc">
+  <mat-error *ngIf="formgroup.controls['desc'].invalid">
+    <p>Invalid!</p>
+  </mat-error>
+  <input type="number" name="startprice" placeholder="10" formControlName="startprice">
+  <mat-error *ngIf="formgroup.controls['startprice'].invalid">
+    <p>Invalid!</p>
+  </mat-error>
+  <button mat-button color="accent" (click)="create()" [disabled]="isrunning || formgroup.invalid">Create Auction</button>
+</form>

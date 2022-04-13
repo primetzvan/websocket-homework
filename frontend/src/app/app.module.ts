@@ -12,6 +12,7 @@ import { MainComponent } from './main/main.component';
 import {MatButtonModule} from "@angular/material/button";
 import {ReactiveFormsModule} from "@angular/forms";
 import {MatInputModule} from "@angular/material/input";
+import {DataService} from "./shared/data.service";
 
 @NgModule({
   declarations: [
@@ -30,7 +31,7 @@ import {MatInputModule} from "@angular/material/input";
     ReactiveFormsModule,
     MatInputModule
   ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

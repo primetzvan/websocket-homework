@@ -1,1 +1,21 @@
-<p>auction works!</p>
+<div *ngIf="auction != null">
+  <div>
+  <h1>{{auction.name}}</h1>
+  <p>{{auction.desc}}</p>
+  <p>{{auction.startprice}}</p>
+  </div>
+
+  <form>
+  <input type="number" placeholder="10" name="bid">
+  <button mat-button color="accent" (click)="bid()">Bid</button>
+  </form>
+
+
+  <div>
+    <p>Users in Hall: {{users}}</p>
+  </div>
+</div>
+
+<div *ngIf="auction == null">
+  <p>No running Auction!</p>
+</div>
